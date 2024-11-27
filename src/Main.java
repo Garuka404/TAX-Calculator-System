@@ -1,5 +1,93 @@
 import java.util.Scanner;
+class Option{
+    public static void withholding(){
+        Scanner scan=new Scanner(System.in);
+        do{
+            System.out.println("\n\n+--------------------------------------------------------------+");
+            System.out.println("|                       WITHHOLDING TAX                        |");
+            System.out.println("+--------------------------------------------------------------+");
+
+            System.out.println("\n \n\t[1] Rent Tax \n"
+                    +"\n\t[2]Bank Interest Tax\n " //1 option selection options
+                    +"\n\t[3]Dividend Tax\n "
+                    +"\n\t[4]Exit\n  ");
+            System.out.print("\n\nEnter an option to continue -> ");
+            int option =scan.nextInt();
+            if(option >4 || option <1){
+                System.out.println("\nInvalid Number try again !!!!!\n");
+            }
+            else{
+                switch(option){
+                    case 1:
+                        System.out.flush();
+                        with.WithRent();
+
+                        break;
+                    case 2:
+                        with.Interest();
+                        break;
+                    case 3:
+                        with.DividedTax();
+                        break;
+                    case 4:
+                        home1.Home1();
+                        break;
+
+                }
+            }
+        }while(true);
+    }
+
+    public static void LeasingPayment(){
+
+        Scanner scan=new Scanner(System.in);
+        do{
+            System.out.println("\n\n+--------------------------------------------------------------+");
+            System.out.println("|                       LEASING PAYMENT                        |");
+            System.out.println("+--------------------------------------------------------------+");
+
+            System.out.println("\n \n\t[1] Calculate Monthly Installment \n"
+                    +"\n\t[2] Search Leasing Category \n " //1 option selection options
+                    +"\n\t[3] Find Leasing Amount\n "
+                    +"\n\t[4]Exit\n  ");
+            System.out.print("\n\nEnter an option to continue -> ");
+            int option =scan.nextInt();
+            if(option >4 || option <1){
+                System.out.println("\nInvalid Number try again !!!!!\n");
+            }
+            else{
+                switch(option){
+                    case 1:
+                        Leasing.CMI();
+
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+
+                }
+            }
+        }while(true);
+    }
+
+
+}
+
+
+
 class Main{
+
+
+
+
+
     public static void Home1(){
         Scanner scan=new Scanner(System.in);
 

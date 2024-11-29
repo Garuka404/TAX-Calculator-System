@@ -1,4 +1,45 @@
 import java.util.Scanner;
+
+class with{
+    public static void WithRent(){
+        Scanner scan=new Scanner(System.in);
+        char c=' ';char  a=' ';
+        do{
+            c =' ';
+            System.out.println("\n\n+--------------------------------------------------------------+");
+            System.out.println("|                           RENT TAX                           |");
+            System.out.println("+--------------------------------------------------------------+");
+            do{
+                System.out.print("\nEnter your rent       : ");
+                int rent=scan.nextInt();
+                int count=0;
+                if(rent<0){
+                    System.out.println("Invalid input ...");
+                    System.out.print("\n\n\nDo you want to enter the correct value again (Y//N)");
+                    a=scan.next().charAt(0);
+                }
+                else{
+                    if(rent<=100000){
+                        System.out.println("\nYou dont have to pay rent tax...");
+                    }
+                    else{
+                        count=((rent-100000)*10)/100;
+                        System.out.println("\nYou have to pay rent Tax : "+count+".00");
+
+                        System.out.print("\n\n\nDo you want to calculater another Rent Tax (Y//N)");
+                        c=scan.next().charAt(0);
+                    }
+                    a=' ';
+                }
+            }while(a=='Y');
+        }while(c=='Y');
+        home1.Home1();
+
+    }
+
+}
+
+
 class Option{
     public static void withholding(){
         Scanner scan=new Scanner(System.in);

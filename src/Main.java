@@ -36,6 +36,38 @@ class with{
         home1.Home1();
 
     }
+    public static void Interest(){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("\n\n+--------------------------------------------------------------+");
+        System.out.println("|                         BANK INTEREST TAX                    |");
+        System.out.println("+--------------------------------------------------------------+");
+        char c,a;
+        do{
+            do{
+                c=' ';a=' ';
+                System.out.print("\n\nEnter your bank interest per year       :");
+                float inter=scan.nextFloat();
+                if(inter<0){
+                    System.out.println("Invalid input ...");
+
+                    System.out.print("\n\nDo you want to enter the correct value again (Y//N)");
+                    a=scan.next().charAt(0);
+                }
+                else{
+                    float Itax=0;
+                    Itax=(inter*5)/100;
+                    System.out.println("\nYour havee to pay Bank Interrest Tax Per year  : "+Itax);
+
+                    System.out.print("\n\n\nDo you want to calculater another Bank Interest Tax (Y//N)");
+                    c=scan.next().charAt(0);
+
+                }
+            }while(a=='Y');
+        }while(c=='Y');
+
+
+    }
+    public static vo
 
 }
 

@@ -67,7 +67,42 @@ class with{
 
 
     }
-    public static vo
+    public static void DividedTax(){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("\n\n+--------------------------------------------------------------+");
+        System.out.println("|                         DIVIDEND TAX                         |");
+        System.out.println("+--------------------------------------------------------------+");
+        char c,a;
+        do{
+            do{
+                c=' ';a=' ';
+                System.out.print("\n\nEnter your total dividend per year       :");
+                float div=scan.nextFloat();
+                if(div<0){
+                    System.out.println("Invalid input ...");
+
+                    System.out.print("\n\nDo you want to enter the correct value again (Y//N)");
+                    a=scan.next().charAt(0);
+                }
+                else if(div<100000){
+                    System.out.println("\n\t\tYou dont have to pay Dividend Tax...");
+                }
+                else{
+                    float Dtax=0;
+                    Dtax=(div*14)/100;
+                    System.out.println("\nYour havee to pay Dividend  Tax Per year  : "+Dtax);
+
+                    System.out.print("\n\n\nDo you want to calculater another Dividend Tax (Y//N)");
+                    c=scan.next().charAt(0);
+
+                }
+            }while(a=='Y');
+        }while(c=='Y');
+
+
+
+    }
+
 
 }
 

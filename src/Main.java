@@ -101,11 +101,69 @@ class with{
 
 
 
-    }
+    }}
+class Pay{
+    public static void PayableTax(){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("\n\n+--------------------------------------------------------------+");
+        System.out.println("|                         PAYABLE TAX                          |");
+        System.out.println("+--------------------------------------------------------------+");
+        char c,a;
+
+        do{
+            do{
+                c=' ';a=' ';
+                System.out.print("\n\nEnter your employee payment per month : ");
+                float div=scan.nextFloat();
+                if(div<0){
+                    System.out.println("Invalid input ...");
+
+                    System.out.print("\n\nDo you want to enter the correct value again (Y//N)");
+                    a=scan.next().charAt(0);
+                }
+
+                else{
+                    float tot=0;
+                    if(div<100000){
+                        System.out.println("\n\t\tYou dont have to pay Payable Tax...");
+                    }
+                    else{
+                        if(100000>div && div<=141667){
+                            tot=(div*6)/100;
+                        }
+                        else if(141667>div && div<=183333){
+                            tot=(div*12)/100;
+                        }
+                        else if(183333>div && div<=225000){
+                            tot=(div*18)/100;
+                        }
+                        else if(225000>div && div<=266667){
+                            tot=(div*24)/100;
+                        }
+                        else if(266667>div && div<=308333){
+                            tot=(div*30)/100;
+                        }
+                        else{
+                            tot=(div*36)/100;
+                        }
+
+                        float Dtax=0;
+                        Dtax=(div*14)/100;
+                        System.out.println("\nYour havee to pay Dividend  Tax Per year  : "+tot);
+
+                        System.out.print("\n\n\nDo you want to calculater another Dividend Tax (Y//N)");
+                        c=scan.next().charAt(0);
+                    }
+                }
+            } while(a=='Y');
+
+        }while(c=='Y');
 
 
-}
 
+
+
+    }}
 
 class Option{
     public static void withholding(){

@@ -164,7 +164,69 @@ class Pay{
 
 
     }}
+class Income{
 
+    public static void IncomeTax(){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("\n\n+--------------------------------------------------------------+");
+        System.out.println("|                         INCOME TAX                           |");
+        System.out.println("+--------------------------------------------------------------+");
+        char c,a;
+
+        do{
+            do{
+                c=' ';a=' ';
+                System.out.print("\n\nEnter your total income per year : ");
+                float div=scan.nextFloat();
+                if(div<0){
+                    System.out.println("Invalid input ...");
+
+                    System.out.print("\n\nDo you want to enter the correct value again (Y//N)");
+                    a=scan.next().charAt(0);
+                }
+
+                else{
+                    float tot=0;
+                    if(div<1200000){
+                        System.out.println("\n\t\tYou dont have to pay Income Tax...");
+                    }
+                    else{
+                        if(1200000>div && div<=1700000){
+                            tot=(div*6)/100;
+                        }
+                        else if(1700000>div && div<=2200000){
+                            tot=(div*12)/100;
+                        }
+                        else if(2200000>div && div<=2700000){
+                            tot=(div*18)/100;
+                        }
+                        else if(2700000>div && div<=3200000){
+                            tot=(div*24)/100;
+                        }
+                        else if(3200000>div && div<=3700000){
+                            tot=(div*30)/100;
+                        }
+                        else{
+                            tot=(div*36)/100;
+                        }
+
+                        float Dtax=0;
+                        Dtax=(div*14)/100;
+                        System.out.println("\nYour havee to pay Dividend  Tax Per year  : "+tot);
+
+                        System.out.print("\n\n\nDo you want to calculater another Income Tax (Y//N)");
+                        c=scan.next().charAt(0);
+                    }
+                }
+            } while(a=='Y');
+
+        }while(c=='Y');
+
+
+
+    }
+
+}
 class Option{
     public static void withholding(){
         Scanner scan=new Scanner(System.in);
@@ -242,17 +304,8 @@ class Option{
             }
         }while(true);
     }
-
-
 }
-
-
-
 class Main{
-
-
-
-
 
     public static void Home1(){
         Scanner scan=new Scanner(System.in);

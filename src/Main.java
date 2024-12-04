@@ -227,7 +227,48 @@ class Income{
     }
 
 }
-class Option{
+
+class SSCL {
+    public static void SsclTax() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("\n\n+--------------------------------------------------------------+");
+        System.out.println("|          Social Security Contribution Levy (SSCL) Tax        |");
+        System.out.println("+--------------------------------------------------------------+");
+        char c, a;
+
+        do {
+            do {
+                c = ' ';
+                a = ' ';
+                System.out.print("\n\nEnter value of Good or Service : ");
+                float div = scan.nextFloat();
+                if (div < 0) {
+                    System.out.println("Invalid input ...");
+
+                    System.out.print("\n\nDo you want to enter the correct value again (Y//N)");
+                    a = scan.next().charAt(0);
+                } else {
+                    float tot = 0;
+                    double count = 0;
+
+                    count = (div * 2.5) / 100;
+
+                    count = count + ((count + div) * 15) / 100;
+
+                    System.out.println("\nYour havee to pay SSCL  Tax Per   : " + count);
+
+                    System.out.print("\n\n\nDo you want to calculater another SSCL Tax (Y//N)");
+                    c = scan.next().charAt(0);
+
+                }
+            } while (a == 'Y');
+
+        } while (c == 'Y');
+
+
+    }
+}
+    class Option{
     public static void withholding(){
         Scanner scan=new Scanner(System.in);
         do{

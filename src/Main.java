@@ -268,6 +268,71 @@ class SSCL {
 
     }
 }
+class Leasing{
+
+    public static void CMI(){
+        Scanner scan=new Scanner(System.in);
+        char c,a;
+
+        do{
+            float amount=0,rate=0,ins=0;
+            c=' ';a=' ';
+            do{
+                System.out.print("\n\nEnter lease amount         : ");
+                amount=scan.nextFloat();
+
+                if(amount<0){
+                    System.out.println("\nInvalid Lease amount... Enter the correct value again...");
+                }
+
+            }while(amount<0);
+
+            do{
+                System.out.print("\n\nEnter annual interest rate : ");
+                rate=scan.nextFloat();
+
+                if(rate<0){
+                    System.out.println("\nInvalid Interest rate... Enter the correct value again...");
+                }
+
+            }while(rate<0);
+            do{
+                System.out.print("\n\nEnter monthly instalment   : ");
+                ins=scan.nextFloat();
+
+                if(ins>5){
+                    System.out.println("\nInvalid number of year... Enter the correct value again...");
+                }
+
+            }while(ins>5);
+
+
+
+
+
+            double tot=1,i=0;
+            double count=0;
+
+            i=rate/10;
+            count=amount*i;
+            int x=1;
+            while(x<=ins){
+                tot=tot*(1+i);
+                x++;
+            }
+            tot=(1-(1/tot));
+            tot=count/tot;
+
+            System.out.println("\nYour monthly instalment  : "+tot);
+
+						 /* System.out.print("\n\n\nDo you want to calculater another SSCL Tax (Y//N)");
+						  c=scan.next().charAt(0);*/
+        }while(c=='Y');
+
+
+    }
+
+}
     class Option{
     public static void withholding(){
         Scanner scan=new Scanner(System.in);
